@@ -3,19 +3,19 @@ exports.seed = function (knex, Promise) {
   .then(function () {
    return knex('ingredient').insert([{
      name: 'coke',
-     recipe_id: knex('recipe').where('title', 'Bourbon+Coke').select('id')
+     recipe_id: knex('recipe').where('name', 'Bourbon+Coke').select('id')
     },
     {
      name: 'pepsi',
-     recipe_id: knex('recipe').where('title', 'Bourbon+Pepsi').select('id')
+     recipe_id: knex('recipe').where('name', 'Bourbon+Pepsi').select('id')
     },
     {
      name: 'burbon',
-     recipe_id: knex('recipe').where('title', 'Bourbon+Pepsi').select('id')
+     recipe_id: knex('recipe').where('name', 'Bourbon+Pepsi').select('id')
     },
     {
      name: 'sprite',
-     recipe_id: knex('recipe').where('title', 'Bourbon+Pepsi').select('id')
+     recipe_id: knex('recipe').where('name', 'Bourbon+Pepsi').select('id')
     }
 
 

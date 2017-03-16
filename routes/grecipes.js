@@ -56,7 +56,7 @@ router.post('/users', function (req, res) {
 })
 router.post('/recipes', function (req, res) {
  var recipeID;
- knex('recipe').where('title', req.body.title).select('id')
+ knex('recipe').where('name', req.body.name).select('id')
   .then(result => {
    recipeID = result[0].id
    console.log(recipeID + 'This guy alreay exits');
@@ -67,7 +67,7 @@ router.post('/recipes', function (req, res) {
    return Recipe().insert({
     description: req.body.description,
     image: req.body.image,
-    title: req.body.title,
+    name: req.body.name,
     user_id: req.body.user_id
    }, 'id')
   })
@@ -231,7 +231,7 @@ router.put('/recipes/:id', (req, res) => {
  Recipe().update({
    description: req.body.description,
    image: req.body.image,
-   title: req.body.title,
+   name: req.body.name,
    user_id: req.body.user_id
   })
   .where('id', req.params.id)

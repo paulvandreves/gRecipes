@@ -3,13 +3,13 @@ exports.seed = function(knex, Promise)   {
   return knex('recipe').del()
   .then(function() {
     return knex('recipe').insert([
-      { user_id: knex('user').where('name','Ron Swanson').select('id'), title: 'Bourbon+Coke', description: 'blah blah blah',
+      { user_id: knex('user').where('name','Ron Swanson').select('id'), name: 'Bourbon+Coke', description: 'blah blah blah',
       image: 'image/pappy.jpeg' },
-      { user_id: knex('user').where('name','Ron Swanson').select('id'), title:'Bourbon+Pepsi', description:'blah blah blah',
+      { user_id: knex('user').where('name','Ron Swanson').select('id'), name:'Bourbon+Pepsi', description:'blah blah blah',
       image: 'images/pappy.jpeg' },
-      { user_id: knex('user').where('name','Pappy Van Winkle').select('id'), title:'Bourbon+Pepsi2', description:'blah blah blah2',
+      { user_id: knex('user').where('name','Pappy Van Winkle').select('id'), name:'Bourbon+Pepsi2', description:'blah blah blah2',
       image: 'images/pappy.jpeg' },
-      { user_id: knex('user').where('name','Pappy Van Winkle').select('id'), title:'Bourbon+Pepsi3', description:'blah blah blah3',
+      { user_id: knex('user').where('name','Pappy Van Winkle').select('id'), name:'Bourbon+Pepsi3', description:'blah blah blah3',
       image: 'images/pappy.jpeg' }
     ])
   })
@@ -29,11 +29,11 @@ exports.seed = function(knex, Promise)   {
 //   return knex('recipe').del()
 //   .then(function() {
 //     return knex('recipe').insert([
-//         {user_id: 1, title: 'Bourbon+Coke', body: {step1: 'pour coke', step2: 'pour Bourbon'}, ingredient:{Bourbon: '1shot',pepsi:'1cup'},
+//         {user_id: 1, name: 'Bourbon+Coke', body: {step1: 'pour coke', step2: 'pour Bourbon'}, ingredient:{Bourbon: '1shot',pepsi:'1cup'},
 //         avatar:'images/swanson,whiskey.jpg'
 //       },
 //
-//         {user_id: 2, title:'Bourbon+Pepsi', body:{step1: 'pour pepsi' step2 'pour Bourbon'}, ingredient:{
+//         {user_id: 2, name:'Bourbon+Pepsi', body:{step1: 'pour pepsi' step2 'pour Bourbon'}, ingredient:{
 //           Bourbon: '1shot', pepsi:'1cup',
 //         },
 //         avatar: 'images/pappy.jpeg'
