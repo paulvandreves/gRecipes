@@ -2,7 +2,7 @@ const grecipes = require('./routes/grecipes.js')
 const express = require('express')
 const app = express()
 var bodyParser = require('body-parser')
-const PORT = process.envPORT || 8080
+const PORT = process.env.PORT || 8080
 // var cors = require("cors");
 
 
