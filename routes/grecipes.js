@@ -210,6 +210,11 @@ router.get('/reviews/:id', function (req, res) {
  })
 })
 
+router.get('/joins', function (req, res) {
+  Join().select().then(function (result) {
+    res.json(result)
+  })
+})
 
 // UPDATE
 router.put('/users/:id', (req, res) => {
