@@ -48,7 +48,7 @@ router.post('/users', function (req, res) {
    return User().insert({
     name: req.body.name,
     avatar: req.body.avatar
-   }, 'id')
+   },'id')
   })
   .then(function (result) {
    res.json(result)
