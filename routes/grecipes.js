@@ -157,8 +157,21 @@ router.get('/users', function (req, res) {
   res.json(result)
  })
 })
+
+router.get('/users/:id', function (req, res) {
+ User().select().where('id', req.params.id).then(function (result) {
+  res.json(result)
+ })
+})
+
 router.get('/recipes', function (req, res) {
  Recipe().select().then(function (result) {
+  res.json(result)
+ })
+})
+
+router.get('/recipes/:id', function (req, res) {
+ Recipe().select().where('id', req.params.id).then(function (result) {
   res.json(result)
  })
 })
@@ -167,8 +180,21 @@ router.get('/ingredients', function (req, res) {
   res.json(result)
  })
 })
+
+router.get('/ingredients/:id', function (req, res) {
+ Ingredient().select().where('id', req.params.id).then(function (result) {
+  res.json(result)
+ })
+})
+
 router.get('/steps', function (req, res) {
  Step().select().then(function (result) {
+  res.json(result)
+ })
+})
+
+router.get('/steps/:id', function (req, res) {
+ Step().select().where('id', req.params.id).then(function (result) {
   res.json(result)
  })
 })
@@ -177,6 +203,13 @@ router.get('/reviews', function (req, res) {
   res.json(result)
  })
 })
+
+router.get('/reviews/:id', function (req, res) {
+ Review().select().where('id', req.params.id).then(function (result) {
+  res.json(result)
+ })
+})
+
 
 // UPDATE
 router.put('/users/:id', (req, res) => {
