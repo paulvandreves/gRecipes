@@ -4,20 +4,16 @@ exports.seed = function (knex, Promise) {
    return knex('ingredient_recipe').insert([
     // prop val           prop val
     {
-     ingredient_id: knex('ingredient').where('name', 'coke').select('id'),
+     ingredient_id: knex('ingredient').where('name', 'Coke').select('id'),
      recipe_id: knex('recipe').where('name', 'Bourbon+Coke').select('id')
     },
     {
-     ingredient_id: knex('ingredient').where('name', 'pepsi').select('id'),
+     ingredient_id: knex('ingredient').where('name', 'Pepsi').select('id'),
      recipe_id: knex('recipe').where('name', 'Bourbon+Pepsi').select('id')
     },
     {
-     ingredient_id: knex('ingredient').where('name', 'burbon').select('id'),
+     ingredient_id: knex('ingredient').where('name', 'Burbon').select('id'),
      recipe_id: knex('recipe').where('name', 'Bourbon+Pepsi2').select('id')
-    },
-    {
-     ingredient_id: knex('ingredient').where('name', 'sprite').select('id'),
-     recipe_id: knex('recipe').where('name', 'Bourbon+Pepsi3').select('id')
     }
    ])
    // may have to hard code id's

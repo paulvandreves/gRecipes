@@ -2,23 +2,17 @@ exports.seed = function (knex, Promise) {
  return knex('ingredient').del()
   .then(function () {
    return knex('ingredient').insert([{
-     name: 'coke',
+     name: 'Coke',
      recipe_id: knex('recipe').where('name', 'Bourbon+Coke').select('id')
     },
     {
-     name: 'pepsi',
+     name: 'Pepsi',
      recipe_id: knex('recipe').where('name', 'Bourbon+Pepsi').select('id')
     },
     {
-     name: 'burbon',
-     recipe_id: knex('recipe').where('name', 'Bourbon+Pepsi').select('id')
-    },
-    {
-     name: 'sprite',
+     name: 'Burbon',
      recipe_id: knex('recipe').where('name', 'Bourbon+Pepsi').select('id')
     }
-
-
    ])
   })
 }
